@@ -1,0 +1,9 @@
+.idea/
+*.iml
+X*.md
+*.pyc
+*.swp
+build
+dist
+*.egg*
+.DS_Store

@@ -1,0 +1,68 @@
+<form class="form-horizontal">
+    <h3>xMatters integration</h3>
+    <p>xMatters notifications will be send by setting up this integration on one or more events of your choice.
+        Before setting up integration you should have <a href="https://xmatters.com">xMatters</a> account and setup integration. Check instructions on <a hrev="https://github.com/svv2014/OctoPrint-xMatters-integration">GitHub</a>. </p>
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" data-bind="checked: settings.plugins.xMattersIntegration.enabled"> Enable integration
+        </label>
+    </div>
+    <div class="control-group">
+        <label class="control-label">{{ _('API Key') }}</label>
+        <div class="controls">
+            <input type="text" class="input-block-level" data-bind="value: settings.plugins.xMattersIntegration.apikey">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">{{ _('Secret') }}</label>
+        <div class="controls">
+            <input type="password" class="input-block-level" data-bind="value: settings.plugins.xMattersIntegration.secret">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">{{ _('Integration URL (Trigger)') }}</label>
+        <div class="controls">
+            <input type="text" class="input-block-level"
+                   data-bind="value: settings.plugins.xMattersIntegration.integrationUrl">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">{{ _('Recipients') }}</label>
+        <div class="controls">
+            <input type="text" class="input-block-level"
+                   data-bind="value: settings.plugins.xMattersIntegration.recipients">
+        </div>
+    </div>
+    <h4>Notify on event:</h4>
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" data-bind="checked: settings.plugins.xMattersIntegration.enablePrintStarted">  {{ _('Printing started') }}
+        </label>
+    </div>
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" data-bind="checked: settings.plugins.xMattersIntegration.enablePrintDone">  {{ _('Printing done') }}
+        </label>
+    </div>
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" data-bind="checked: settings.plugins.xMattersIntegration.enablePrintPaused">  {{ _('Printing paused') }}
+        </label>
+    </div>
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" data-bind="checked: settings.plugins.xMattersIntegration.enablePrintResumed">  {{ _('Printing resumed') }}
+        </label>
+    </div>
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" data-bind="checked: settings.plugins.xMattersIntegration.enablePrintFailed">  {{ _('Printing failed') }}
+        </label>
+    </div>
+    <div class="controls">
+        <label class="checkbox">
+            <input type="checkbox" data-bind="checked: settings.plugins.xMattersIntegration.enableMovieDone">  {{ _('Movie rendered') }}
+        </label>
+    </div>
+
+</form>
