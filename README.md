@@ -12,7 +12,7 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
 
 ### Using `pip`
 
-    pip install https://github.com/yourGithubName/OctoPrint-HelloWorld/archive/master.zip
+    pip install https://github.com/svv2014/OctoPrint-Xmatters-integration/archive/master.zip
 
 ## xMatter integration setup 
 
