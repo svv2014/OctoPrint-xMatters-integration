@@ -13,7 +13,7 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 	def __init__(self):
 
 	def on_after_startup(self):
-		self._logger.info("xMatters (enabled: %s)" % self.enabled)
+		self._logger.info("xMatters (enabled: %s)" % self._settings.get(["enabled"]))
 
 	def get_settings_defaults(self):
 		return dict(apikey="<API key>",
