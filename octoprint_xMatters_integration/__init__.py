@@ -10,8 +10,6 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 								octoprint.plugin.SettingsPlugin,
 								octoprint.plugin.EventHandlerPlugin):
 
-	def __init__(self):
-
 	def on_after_startup(self):
 		self._logger.info("xMatters (enabled: %s)" % self._settings.get(["enabled"]))
 
@@ -25,7 +23,7 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 					enablePrintDone=False,
 					enablePrintPaused=False,
 					enablePrintResumed=False,
-			    		enablePrintFailed=False,
+					enablePrintFailed=False,
 					enableMovieDone=False)
 
 	def get_template_configs(self):
