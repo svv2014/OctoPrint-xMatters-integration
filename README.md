@@ -12,7 +12,7 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
 
 ### Using `pip`
 
-    pip install https://github.com/yourGithubName/OctoPrint-HelloWorld/archive/master.zip
+    pip install https://github.com/svv2014/OctoPrint-Xmatters-integration/archive/master.zip
 
 ## xMatter integration setup 
 
@@ -21,7 +21,7 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
 * Import zip file from `xMatters/OctoPrintIntegration.zip` 
     * this will create communication plan for integration
 * On communication plan press `Edit` and choose `Integration Builder`
-* You should see one configured `Inbound integrations`  
+* You should see one configured `Inbound integration`  
     * Note if `Inbound integrations` configuration was not imported you may need to create once with `authentication method` equals to `API key`. 
 * Open this configuration and at the bottom you will find all needed credential you ne
 
