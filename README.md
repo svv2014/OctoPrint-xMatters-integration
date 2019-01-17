@@ -30,3 +30,7 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
 * Take `API Key`, `Secret`, `Integration URL` from xMatters integration and set it in plugin configuration
     * Note: for `recipients` field use comma separated user id
 * Choose events you interested in and enjoy.
+
+## TODO
+* custom messages
+* option to send a photo with notification
