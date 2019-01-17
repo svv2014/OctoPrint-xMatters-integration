@@ -90,5 +90,6 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 			title += " Time-laps rendered %s " % payload["movie_basename"]
 			self.send_xmatters_notification(title, details)
 
+
 __plugin_name__ = "xMatters Integration"
 __plugin_implementation__ = XmattersIntegrationPlugin()
