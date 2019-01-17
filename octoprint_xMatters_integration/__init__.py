@@ -56,38 +56,38 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 		
 		if event == "PrintStarted" and self._settings.get(["enablePrintStarted"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Printing started for the file: %s%s ,<br> storage location %s" % (payload.path, payload.name, payload.origin)
-			title += " Print Started %s" % payload.name
+			details = "Printing started for the file: %s%s ,<br> storage location %s" % (payload["path"], payload["name"], payload["origin"])
+			title += " Print Started %s" % payload["name"]
 			self.send_xmatters_notification(title, details)
 
 		if event == "PrintDone" and self._settings.get(["enablePrintDone"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Printing Finished for the file: %s%s ,<br> storage location %s <br> time: %s " % (payload.path, payload.name, payload.origin, payload.time)
-			title += " Printing Finished %s " % payload.name
+			details = "Printing Finished for the file: %s%s ,<br> storage location %s <br> time: %s " % (payload["path"], payload["name"], payload["origin"], payload["time"])
+			title += " Printing Finished %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
 
 		if event == "PrintPaused" and self._settings.get(["enablePrintPaused"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Printing Paused for the file: %s%s ,<br> storage location %s, <br> position: %s" % (payload.path, payload.name, payload.origin, payload.position)
-			title += " Printing Paused %s " % payload.name
+			details = "Printing Paused for the file: %s%s ,<br> storage location %s, <br> position: %s" % (payload["path"], payload["name"], payload["origin"], payload["position"])
+			title += " Printing Paused %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
 
 		if event == "PrintResumed" and self._settings.get(["enablePrintResumed"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Printing Resumed for the file: %s%s ,<br> storage location %s" % (payload.path, payload.name, payload.origin)
-			title += " Printing Resumed %s " % payload.name
+			details = "Printing Resumed for the file: %s%s ,<br> storage location %s" % (payload["path"], payload["name"], payload["origin"])
+			title += " Printing Resumed %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
 
 		if event == "PrintFailed" and self._settings.get(["enablePrintFailed"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Printing Failed for the file: %s%s ,<br> storage location %s,<br> time: %s,<br> failure reason: %s " % (payload.path, payload.name, payload.origin, payload.time, payload.reason)
-			title += " Printing Failed %s " % payload.name
+			details = "Printing Failed for the file: %s%s ,<br> storage location %s,<br> time: %s,<br> failure reason: %s " % (payload["path"], payload["name"], payload["origin"], payload["time"], payload["reason"])
+			title += " Printing Failed %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
 
 		if event == "MovieDone" and self._settings.get(["enableMovieDone"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Rendering Time-laps is finished. File: %s ,<br> GCODE file: %s" % (payload.movie, payload.gcode)
-			title += " Time-laps rendered %s " % payload.movie_basename
+			details = "Rendering Time-laps is finished. File: %s ,<br> GCODE file: %s" % (payload["movie"], payload["gcode"])
+			title += " Time-laps rendered %s " % payload["movie_basename"]
 			self.send_xmatters_notification(title, details)
 
 __plugin_name__ = "xMatters Integration"
