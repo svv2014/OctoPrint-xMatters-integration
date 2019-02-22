@@ -14,6 +14,9 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
 
     pip install https://github.com/svv2014/OctoPrint-Xmatters-integration/archive/master.zip
 
+### After install
+    You better to do full restatart after installing plugin, there is an issue that is listed in TODO section.
+
 ## xMatter integration setup 
 
 * Open your xMatters page
@@ -32,5 +35,6 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
 * Choose events you interested in and enjoy.
 
 ## TODO
+* prompt usert to do full restart after plugin install
 * custom messages
 * option to send a photo with notification
