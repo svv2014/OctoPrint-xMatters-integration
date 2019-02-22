@@ -56,19 +56,19 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 		
 		if event == "PrintStarted" and self._settings.get(["enablePrintStarted"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Printing started for the file: %s%s ,<br> storage location %s" % (payload["path"], payload["name"], payload["origin"])
+			details = "Printing started for the file: %s ,<br> storage location %s" % (payload["path"], payload["origin"])
 			title += " Print Started %s" % payload["name"]
 			self.send_xmatters_notification(title, details)
 
 		if event == "PrintDone" and self._settings.get(["enablePrintDone"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Printing Finished for the file: %s%s ,<br> storage location %s <br> time: %s " % (payload["path"], payload["name"], payload["origin"], payload["time"])
+			details = "Printing Finished for the file: %s ,<br> storage location %s <br> time: %s " % (payload["path"], payload["origin"], payload["time"])
 			title += " Printing Finished %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
 
 		if event == "PrintPaused" and self._settings.get(["enablePrintPaused"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Printing Paused for the file: %s%s ,<br> storage location %s, <br> position: %s" % (payload["path"], payload["name"], payload["origin"], payload["position"])
+			details = "Printing Paused for the file: %s ,<br> storage location %s, <br> position: %s" % (payload["path"], payload["origin"], payload["position"])
 			title += " Printing Paused %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
 
@@ -80,7 +80,7 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 
 		if event == "PrintFailed" and self._settings.get(["enablePrintFailed"]):
 			self._logger.info("xMatters ( event: %s)" % event)
-			details = "Printing Failed for the file: %s%s ,<br> storage location %s,<br> time: %s,<br> failure reason: %s " % (payload["path"], payload["name"], payload["origin"], payload["time"], payload["reason"])
+			details = "Printing Failed for the file: %s ,<br> storage location %s,<br> time: %s,<br> failure reason: %s " % (payload["path"], payload["origin"], payload["time"], payload["reason"])
 			title += " Printing Failed %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
 
