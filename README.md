@@ -36,5 +36,6 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
 
 ## TODO
 * prompt usert to do full restart after plugin install
+* Add test button to check integration with xMatters 
 * custom messages
 * option to send a photo with notification
