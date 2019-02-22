@@ -15,7 +15,8 @@ Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wik
     pip install https://github.com/svv2014/OctoPrint-Xmatters-integration/archive/master.zip
 
 ### After install
-    You better to do full restatart after installing plugin, there is an issue that is listed in TODO section.
+    
+Do a full restatart of OctoPrint, there is an issue that is listed in TODO section.
 
 ## xMatter integration setup 
 
