@@ -93,6 +93,30 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 			title += " Time-laps rendered %s " % payload["movie_basename"]
 			self.send_xmatters_notification(title, details)
 
+	def get_version(self):
+		return self._plugin_version
+
+	def get_update_information(self):
+		return dict(
+			printtrack=dict(
+				displayName="xMatters Integration",
+				displayVersion=self._plugin_version,
+				type="github_release",
+				current=self._plugin_version,
+				user="svv2014",
+				repo="OctoPrint-xMatters-integration",
+				pip="https://github.com/svv2014/OctoPrint-xMatters-integration/archive/{target_version}.zip"
+			)
+		)
 
 __plugin_name__ = "xMatters Integration"
 __plugin_implementation__ = XmattersIntegrationPlugin()
+
+def __plugin_load__():
+	global __plugin_implementation__
+	__plugin_implementation__ = XmattersIntegrationPlugin()
+
+	global __plugin_hooks__
+	__plugin_hooks__ = {
+		"octoprint.plugin.softwareupdate.check_config": __plugin_implementation__.get_update_information
+	}
