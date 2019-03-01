@@ -26,6 +26,28 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 					enablePrintFailed=False,
 					enableMovieDone=False)
 
+	def get_settings_restricted_paths(self):
+		return dict(admin=[["apikey"],
+						   ["secret"],
+						   ["integrationUrl"],
+						   ["recipients"],
+						   ["enabled"],
+						   ["enablePrintStarted"],
+						   ["enablePrintDone"],
+						   ["enablePrintPaused"],
+						   ["enablePrintResumed"],
+						   ["enablePrintFailed"],
+						   ["enableMovieDone"]],
+					user=[["enabled"],
+						  ["recipients"],
+						  ["enablePrintStarted"],
+						  ["enablePrintDone"],
+						  ["enablePrintPaused"],
+						  ["enablePrintResumed"],
+						  ["enablePrintFailed"],
+						  ["enableMovieDone"],],
+					never=[])
+
 	def get_template_configs(self):
 		return [
 			dict(type="navbar", custom_bindings=False),
