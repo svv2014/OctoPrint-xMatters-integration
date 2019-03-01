@@ -96,7 +96,7 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 	def get_version(self):
 		return self._plugin_version
 
-	def get_update_information(self):
+	def get_update_information(self, *args, **kwargs):
 		return dict(
 			xMattersIntegration=dict(
 				displayName="xMatters Integration",
@@ -105,7 +105,7 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 				current=self._plugin_version,
 				user="svv2014",
 				repo="OctoPrint-xMatters-integration",
-				pip="https://github.com/svv2014/OctoPrint-xMatters-integration/archive/{target_version}.zip"
+				pip="https://github.com/svv2014/OctoPrint-xMatters-integration/archive/{target}.zip"
 			)
 		)
 
