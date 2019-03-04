@@ -32,7 +32,7 @@ Do a full restatart of OctoPrint, there is an issue that is listed in TODO secti
 ## Configuration
 
 * Take `API Key`, `Secret`, `Integration URL` from xMatters integration and set it in plugin configuration
-    * Note: for `recipients` field use comma separated user id
+    * Note: for `recipients` field use comma separated user ids. To find user id in xMatters you should open "users" tab, find your user and you will see it in column "User Id".
 * Choose events you interested in and enjoy.
 
 ## TODO
