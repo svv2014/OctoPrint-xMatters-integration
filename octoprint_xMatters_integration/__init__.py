@@ -1,5 +1,6 @@
 # coding=utf-8
 from __future__ import absolute_import
+from datetime import datetime
 
 import octoprint.plugin
 import requests
@@ -87,7 +88,8 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 
 		if event == "PrintDone" and self._settings.get(["enablePrintDone"]):
 			self._logger.debug("xMatters ( event: %s)" % event)
-			details = "Printing Finished for the file: %s ,<br> storage location %s <br> time: %s " % (payload["path"], payload["origin"], payload["time"])
+			user_frendly_time = datetime.timedelta(seconds=payload["time"])
+			details = "Printing Finished for the file: %s ,<br> storage location %s <br> time: %s " % (payload["path"], payload["origin"], user_frendly_time)
 			title += " Printing Finished %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
 
@@ -105,7 +107,8 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 
 		if event == "PrintFailed" and self._settings.get(["enablePrintFailed"]):
 			self._logger.debug("xMatters ( event: %s)" % event)
-			details = "Printing Failed for the file: %s ,<br> storage location %s,<br> time: %s,<br> failure reason: %s " % (payload["path"], payload["origin"], payload["time"], payload["reason"])
+			user_frendly_time = datetime.timedelta(seconds=payload["time"])
+			details = "Printing Failed for the file: %s ,<br> storage location %s,<br> time: %s,<br> failure reason: %s " % (payload["path"], payload["origin"], user_frendly_time, payload["reason"])
 			title += " Printing Failed %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
 
