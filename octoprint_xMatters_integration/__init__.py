@@ -88,7 +88,7 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 
 		if event == "PrintDone" and self._settings.get(["enablePrintDone"]):
 			self._logger.debug("xMatters ( event: %s)" % event)
-			user_frendly_time = datetime.timedelta(seconds=payload["time"])
+			user_frendly_time = datetime.timedelta(seconds=int(payload["time"]))
 			details = "Printing Finished for the file: %s ,<br> storage location %s <br> time: %s " % (payload["path"], payload["origin"], user_frendly_time)
 			title += " Printing Finished %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
@@ -107,7 +107,7 @@ class XmattersIntegrationPlugin(octoprint.plugin.StartupPlugin,
 
 		if event == "PrintFailed" and self._settings.get(["enablePrintFailed"]):
 			self._logger.debug("xMatters ( event: %s)" % event)
-			user_frendly_time = datetime.timedelta(seconds=payload["time"])
+			user_frendly_time = datetime.timedelta(seconds=int(payload["time"]))
 			details = "Printing Failed for the file: %s ,<br> storage location %s,<br> time: %s,<br> failure reason: %s " % (payload["path"], payload["origin"], user_frendly_time, payload["reason"])
 			title += " Printing Failed %s " % payload["name"]
 			self.send_xmatters_notification(title, details)
