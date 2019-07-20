@@ -14,7 +14,7 @@ plugin_package = "octoprint_xMatters_integration"
 plugin_name = "OctoPrint-Xmatters-integration"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
-plugin_version = "0.1.7"
+plugin_version = "0.1.8"
 
 # The plugin's description. Can be overwritten within OctoPrint's internal data via __plugin_description__ in the plugin
 # module
